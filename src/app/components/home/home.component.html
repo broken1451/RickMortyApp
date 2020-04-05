@@ -1,0 +1,51 @@
+
+<div class="text-center mt-5" *ngIf="loading">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div class="card-columns"  *ngIf="!loading">
+    <div class="card mt-4" *ngFor="let character of characters; let i = index" style=" width: 80%;">
+      <img [src]="character.image" class="card-img-top mt-1" alt="..." style="width: 60%; margin-left: 15%;">
+      <div class="card-body">
+        <h5 class="card-title">{{character.name}}</h5>
+        <span class="badge badge-dark">Especie: {{character.species}}</span>
+        <span class="badge badge-dark ml-3">Genero: {{character.gender}}</span>
+        <div class="form-group mt-2">
+          <label for="exampleInputPassword1">Origen:<span class="badge badge-dark ml-3">{{character.origin.name}}</span></label>
+        </div>
+        <!-- <button type="button" class="btn btn-dark btn-block" (click)="verdetalles(i)">Ver detalles</button> -->
+        <!-- Button trigger modal -->
+          <button type="button"  class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModal" (click)="verdetalles(character)">
+            Ver detalles
+          </button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img [src]="charactersimg" class="card-img-top mt-1" alt="..." style="width: 60%; margin-left: 15%;">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark btn-block" data-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-dark btn-block" data-dismiss="modal" [routerLink]="['/details', charactersId]" >Ver info</button> -->
+              <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"  (click)="verInfo()" >Ver info</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+    </div>
+  </div>
+  

@@ -1,0 +1,35 @@
+
+<div class="alert alert-dark mt-4" role="alert" *ngIf="error">
+   No se  encontro personaje con  el nombre {{termino}}
+</div>
+
+<div class="text-center mt-5" *ngIf="loading">
+   <div class="spinner-border" role="status">
+     <span class="sr-only">Loading...</span>
+   </div>
+ </div>
+
+<div class="card-columns" *ngIf="!loading" >
+   <div class="card mt-4" *ngFor="let character of caracteres; let i = index" style=" width: 80%;">
+     <img [src]="character.image" class="card-img-top mt-1" alt="..." style="width: 60%; margin-left: 15%;">
+     <div class="card-body">
+       <h5 class="card-title">{{character.name}}</h5>
+       <span class="badge badge-dark">Especie: {{character.species}}</span>
+       <span class="badge badge-dark ml-3">Genero: {{character.gender}}</span>
+       <div class="form-group mt-2">
+         <label for="exampleInputPassword1">Origen:<span class="badge badge-dark ml-3">{{character.origin.name}}</span></label>
+       </div>
+       <!-- <button type="button" class="btn btn-dark btn-block" (click)="verdetalles(i)">Ver detalles</button> -->
+       <!-- Button trigger modal -->
+         <button type="button"  class="btn btn-dark btn-block">
+           Ir atras
+         </button>
+     </div>
+  
+     
+   </div>
+ </div>
+ 
+
+
+

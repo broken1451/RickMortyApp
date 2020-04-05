@@ -1,0 +1,34 @@
+<div class="text-center mt-5" *ngIf="loading">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+<div class="card-columns mt-4" *ngIf="!loading">
+    <div class="card" *ngFor="let epi of episodies">
+        <img src="../../../assets/img/rick-y-morty-redondo.png" class="card-img-top" alt="...">
+   
+      <div class="card-body">
+        <div class="form-group mt-2">
+            <label for="exampleInputPassword1">Nombre: <span class="badge badge-dark ml-3">{{epi.name}}</span></label>
+          </div>
+               
+        <span class="badge badge-dark ml-3">
+            {{epi.air_date}}
+        </span>
+        <span class="badge badge-dark ml-3">
+            {{epi.episode}}
+        </span>
+        <span class="badge badge-dark ml-3">
+            {{epi.created}}
+        </span>
+    
+     
+     
+      </div>
+    </div>
+</div>
+
+
+

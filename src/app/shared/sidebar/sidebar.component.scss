@@ -1,0 +1,15 @@
+ul{
+    // background-color: blue;
+    width:8%;
+    float: left;
+    height: 1550px;
+    background-image: url(../../../assets/img/fondo.jpg);
+    color: white;
+}
+
+@media only screen and (max-width: 994px) {
+    ul {
+      width:26%;
+      background-image: url(../../../assets/img/fondo.jpg);
+    }
+  }
